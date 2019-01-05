@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Species</h1>
+    <h2>Sample your fonts in the browser</h2>
+    <hr>
+    <div v-for="family in families" :key="family.id">
+      <h3 :style="'--family:' + family.title"><router-link :to="{ name: 'family', params: { family: family.name }}">{{ family.title }}</router-link></h3>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
-  components: {
-    HelloWorld
+  computed: {
+    families () {
+      return this.$store.getters.families
+    }
   }
 }
 </script>
