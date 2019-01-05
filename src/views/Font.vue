@@ -1,6 +1,7 @@
 <template>
   <div class="font">
     <type-sample
+      v-if="details"
       :title="details.title"
       :weight="details.weight"
       :italic="details.italic"
@@ -19,9 +20,7 @@ export default {
   },
   data () {
     return {
-      loading: false,
-      details: null,
-      error: null
+      details: false
     }
   },
   created () {
@@ -32,16 +31,7 @@ export default {
   },
   methods: {
     fetchData () {
-      this.error = this.post = null
-      this.loading = true
-      getPost(this.$route.params.details, (err, post) => {
-        this.loading = false
-        if (err) {
-          this.error = err.toString()
-        } else {
-          this.details = post
-        }
-      })
+      this.details = this.$route.params.details
     }
   }
 }
