@@ -3,8 +3,7 @@ export default [
     id: 0,
     title: 'Helvetica Neue',
     name: 'helvetica-neue',
-    adobe: false,
-    google: false,
+    embed: false,
     fonts: [
       {
         id: 0,
@@ -52,8 +51,7 @@ export default [
     id: 1,
     title: 'Georgia',
     name: 'georgia',
-    adobe: false,
-    google: false,
+    embed: false,
     fonts: [
       {
         id: 0,

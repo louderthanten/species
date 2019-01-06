@@ -7,12 +7,18 @@ const state = {
 const mutations = {
   'SET_FAMILIES' (state, families) {
     state.families = families
+  },
+  'ADD_FAMILY' (state, payload) {
+    state.families.push(payload)
   }
 }
 
 const actions = {
   initFamilies: ({ commit }) => {
     commit('SET_FAMILIES', families)
+  },
+  addFamily: ({ commit }, payload) => {
+    commit('ADD_FAMILY', payload)
   }
 }
 
